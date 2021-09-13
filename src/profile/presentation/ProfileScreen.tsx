@@ -10,7 +10,7 @@ import {
 } from "native-base";
 import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 
-const ProfileScreen: React.FC = ({ route }) => {
+const ProfileScreen: React.FC = ({ navigation }) => {
   return (
     <Box px={4} pt={8} flex={1} safeArea bg="white">
       <Heading size="lg">Storm Borax</Heading>
@@ -21,6 +21,7 @@ const ProfileScreen: React.FC = ({ route }) => {
         variant="ghost"
         alignSelf="baseline"
         colorScheme="blue"
+        onPress={() => navigation.navigate("Edit Profile")}
       >
         Edit Profil
       </Button>
@@ -110,7 +111,7 @@ const ProfileScreen: React.FC = ({ route }) => {
           <Text my={4}>Pengaturan Bahasa</Text>
           <Text my={4}>Ketentuan Layanan</Text>
           <Text my={4}>Tentang Kopi Kuy</Text>
-          <Divider width={1}/>
+          <Divider width={1} />
         </VStack>
       </HStack>
     </Box>

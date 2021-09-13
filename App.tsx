@@ -7,6 +7,7 @@ import HomeScreen from "./src/home/presentation/HomeScreen";
 import CatalogueSreen from "./src/catalogue/presentation/CatalogueScreen";
 import PromotionScreen from "./src/promotion/presentation/PromotionScreen";
 import ProfileScreen from "./src/profile/presentation/ProfileScreen";
+import EditProfileScreen from "./src/profile/presentation/EditProfileScreen";
 import { NativeBaseProvider } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 const MainStack = createNativeStackNavigator();
@@ -42,6 +43,7 @@ export default function App() {
             component={KopiKuyTabs}
             options={{ headerShown: false }}
           />
+          <MainStack.Screen name="Edit Profile" component={EditProfileScreen} />
         </MainStack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
