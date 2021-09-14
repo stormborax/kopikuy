@@ -10,15 +10,8 @@ import {
 } from "native-base";
 import { MaterialIcons, FontAwesome, Ionicons } from "@expo/vector-icons";
 
-const ProfileScreen: React.FC = ({ navigation }) => {
-  React.useLayoutEffect(() => {
-    navigation.setOptions({
-      headerShown: false,
-      tabBarIcon: ({ color, size }) => (
-        <Ionicons name="person-circle-outline" size={size} color={color} />
-      ),
-    });
-  });
+const ProfileScreen: React.FC = () => {
+  
   return (
     <Box px={4} pt={8} flex={1} safeArea bg="white">
       <Heading size="lg">Storm Borax</Heading>
