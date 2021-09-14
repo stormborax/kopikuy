@@ -2,12 +2,12 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { StyleSheet } from "react-native";
 import HomeScreen from "./src/home/presentation/HomeScreen";
 import CatalogueSreen from "./src/catalogue/presentation/CatalogueScreen";
 import PromotionScreen from "./src/promotion/presentation/PromotionScreen";
 import ProfileScreen from "./src/profile/presentation/ProfileScreen";
 import EditProfileScreen from "./src/profile/presentation/EditProfileScreen";
+import EditPinScreen from "./src/profile/presentation/EditPinScreen";
 import { NativeBaseProvider } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
 const MainStack = createNativeStackNavigator();
@@ -44,6 +44,7 @@ export default function App() {
             options={{ headerShown: false }}
           />
           <MainStack.Screen name="Edit Profile" component={EditProfileScreen} />
+          <MainStack.Screen name="Ganti PIN" component={EditPinScreen} />
         </MainStack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
