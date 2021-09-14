@@ -8,9 +8,17 @@ import {
   Divider,
   Text,
 } from "native-base";
-import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
+import { MaterialIcons, FontAwesome, Ionicons } from "@expo/vector-icons";
 
 const ProfileScreen: React.FC = ({ navigation }) => {
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+      tabBarIcon: ({ color, size }) => (
+        <Ionicons name="person-circle-outline" size={size} color={color} />
+      ),
+    });
+  });
   return (
     <Box px={4} pt={8} flex={1} safeArea bg="white">
       <Heading size="lg">Storm Borax</Heading>
