@@ -12,6 +12,11 @@ import {
 import { Feather, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 
 const EditProfileScreen: React.FC = ({ navigation }) => {
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitleAlign: "center",
+    });
+  });
   return (
     <Box flex={1}>
       <ScrollView

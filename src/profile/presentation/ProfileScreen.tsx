@@ -10,8 +10,7 @@ import {
 } from "native-base";
 import { MaterialIcons, FontAwesome, Ionicons } from "@expo/vector-icons";
 
-const ProfileScreen: React.FC = ({navigation}) => {
-  
+const ProfileScreen: React.FC = ({ navigation }) => {
   return (
     <Box px={4} pt={8} flex={1} safeArea bg="white">
       <Heading size="lg">Storm Borax</Heading>
@@ -105,13 +104,25 @@ const ProfileScreen: React.FC = ({navigation}) => {
           </Box>
         </VStack>
         <VStack divider={<Divider />} flex={1}>
-          <Text my={4}>Semua Pesanan</Text>
-          <Text py={4} onPress={() => navigation.navigate("Alamat Saya")}>Alamat Pengiriman</Text>
-          <Text my={4}>Bantuan</Text>
-          <Text my={4}>Curhat</Text>
-          <Text my={4}>Pengaturan Bahasa</Text>
-          <Text my={4}>Ketentuan Layanan</Text>
-          <Text my={4}>Tentang Kopi Kuy</Text>
+          <Text py={4}>Semua Pesanan</Text>
+          <Text py={4} onPress={() => navigation.navigate("Alamat Saya")}>
+            Alamat Pengiriman
+          </Text>
+          <Text py={4} onPress={() => navigation.navigate("Bantuan")}>
+            Bantuan
+          </Text>
+          <Text py={4} onPress={() => navigation.navigate("Curhat")}>
+            Curhat
+          </Text>
+          <Text py={4} onPress={() => navigation.navigate("Pilih Bahasa")}>
+            Pengaturan Bahasa
+          </Text>
+          <Text py={4} onPress={() => navigation.navigate("Ketentuan Layanan")}>
+            Ketentuan Layanan
+          </Text>
+          <Text py={4} onPress={() => navigation.navigate("Tentang Kopi Kuy")}>
+            Tentang Kopi Kuy
+          </Text>
           <Divider width={1} />
         </VStack>
       </HStack>

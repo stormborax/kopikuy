@@ -33,7 +33,7 @@ const MyVoucherScreen: React.FC = ({ route }) => {
         mt={4}
         rounded="md"
         alignSelf="center"
-        minH="100"
+        minH="100px"
         w="100%"
         borderRadius={8}
         shadow={1}
