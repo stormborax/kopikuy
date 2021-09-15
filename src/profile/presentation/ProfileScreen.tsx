@@ -10,7 +10,7 @@ import {
 } from "native-base";
 import { MaterialIcons, FontAwesome, Ionicons } from "@expo/vector-icons";
 
-const ProfileScreen: React.FC = () => {
+const ProfileScreen: React.FC = ({navigation}) => {
   
   return (
     <Box px={4} pt={8} flex={1} safeArea bg="white">
