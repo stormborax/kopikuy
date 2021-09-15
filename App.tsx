@@ -8,6 +8,7 @@ import CatalogueSreen from "./src/catalogue/presentation/CatalogueScreen";
 import ProfileScreen from "./src/profile/presentation/ProfileScreen";
 import EditProfileScreen from "./src/profile/presentation/EditProfileScreen";
 import EditPinScreen from "./src/profile/presentation/EditPinScreen";
+import MyAddressScreen from "./src/profile/presentation/MyAddressScreen";
 import MyVoucherScreen from "./src/promotion/presentation/MyVoucherScreen";
 import VoucherPackageScreen from "./src/promotion/presentation/VoucherPackageScreen";
 import MissionScreen from "./src/promotion/presentation/MissionScreen";
@@ -100,6 +101,7 @@ export default function App() {
           />
           <MainStack.Screen name="Edit Profile" component={EditProfileScreen} />
           <MainStack.Screen name="Ganti PIN" component={EditPinScreen} />
+          <MainStack.Screen name="Alamat Saya" component={MyAddressScreen} />
           <MainStack.Screen
             name="Riwayat Pembelian"
             component={PurchaseHistoryScreen}
