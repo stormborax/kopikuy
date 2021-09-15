@@ -9,16 +9,14 @@ import PromotionScreen from "./src/promotion/presentation/PromotionScreen";
 import ProfileScreen from "./src/profile/presentation/ProfileScreen";
 import EditProfileScreen from "./src/profile/presentation/EditProfileScreen";
 import EditPinScreen from "./src/profile/presentation/EditPinScreen";
+import MyAddressScreen from "./src/profile/presentation/MyAddressScreen";
 import { NativeBaseProvider } from "native-base";
 const MainStack = createNativeStackNavigator();
 const MainBottomTab = createBottomTabNavigator();
 const PromotionTopTab = createMaterialTopTabNavigator();
 
 function PromotionTopTabs() {
-  return (
-    <PromotionTopTab.Navigator>
-    </PromotionTopTab.Navigator>
-  )
+  return <PromotionTopTab.Navigator></PromotionTopTab.Navigator>;
 }
 
 function KopiKuyTabs() {
@@ -44,6 +42,7 @@ export default function App() {
           />
           <MainStack.Screen name="Edit Profile" component={EditProfileScreen} />
           <MainStack.Screen name="Ganti PIN" component={EditPinScreen} />
+          <MainStack.Screen name="Alamat Saya" component={MyAddressScreen} />
         </MainStack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

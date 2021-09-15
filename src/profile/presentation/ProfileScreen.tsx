@@ -113,7 +113,7 @@ const ProfileScreen: React.FC = ({ navigation }) => {
         </VStack>
         <VStack divider={<Divider />} flex={1}>
           <Text my={4}>Semua Pesanan</Text>
-          <Text my={4}>Alamat Pengiriman</Text>
+          <Text py={4} onPress={() => navigation.navigate("Alamat Saya")}>Alamat Pengiriman</Text>
           <Text my={4}>Bantuan</Text>
           <Text my={4}>Curhat</Text>
           <Text my={4}>Pengaturan Bahasa</Text>
