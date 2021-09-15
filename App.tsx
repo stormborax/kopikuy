@@ -9,6 +9,11 @@ import ProfileScreen from "./src/profile/presentation/ProfileScreen";
 import EditProfileScreen from "./src/profile/presentation/EditProfileScreen";
 import EditPinScreen from "./src/profile/presentation/EditPinScreen";
 import MyAddressScreen from "./src/profile/presentation/MyAddressScreen";
+import FaqScreen from "./src/profile/presentation/FaqScreen";
+import ReportScreen from "./src/profile/presentation/ReportScreen";
+import EditLanguageScreen from "./src/profile/presentation/EditLanguageScreen";
+import PolicyScreen from "./src/profile/presentation/PolicyScreen";
+import AboutScreen from "./src/profile/presentation/AboutScreen";
 import MyVoucherScreen from "./src/promotion/presentation/MyVoucherScreen";
 import VoucherPackageScreen from "./src/promotion/presentation/VoucherPackageScreen";
 import MissionScreen from "./src/promotion/presentation/MissionScreen";
@@ -102,6 +107,14 @@ export default function App() {
           <MainStack.Screen name="Edit Profile" component={EditProfileScreen} />
           <MainStack.Screen name="Ganti PIN" component={EditPinScreen} />
           <MainStack.Screen name="Alamat Saya" component={MyAddressScreen} />
+          <MainStack.Screen name="Bantuan" component={FaqScreen} />
+          <MainStack.Screen name="Curhat" component={ReportScreen} />
+          <MainStack.Screen
+            name="Pilih Bahasa"
+            component={EditLanguageScreen}
+          />
+          <MainStack.Screen name="Ketentuan Layanan" component={PolicyScreen} />
+          <MainStack.Screen name="Tentang Kopi Kuy" component={AboutScreen} />
           <MainStack.Screen
             name="Riwayat Pembelian"
             component={PurchaseHistoryScreen}
