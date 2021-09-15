@@ -1,5 +1,4 @@
 import React from "react";
-import { Dimensions, View } from "react-native";
 import {
   Box,
   Heading,
@@ -9,17 +8,14 @@ import {
   Text,
   Button,
   ScrollView,
-  SimpleGrid,
 } from "native-base";
 
 import Carousel from "react-native-snap-carousel";
-import Countdown from "react-native-countdown-component";
+import CountDown from "react-native-countdown-component";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import PromoCard from "../../core/presentation/PromoCard";
 import ProductCard from "../../core/presentation/ProductCard";
-
-var width = Dimensions.get("window");
 
 const HomeScreen: React.FC = ({ route }) => {
   return (
@@ -71,12 +67,11 @@ const HomeScreen: React.FC = ({ route }) => {
               Berakhir dalam
             </Heading>
             <Box py={2}>
-              <Countdown
+              <CountDown
                 showSeparator
                 size={10}
                 until={3600000}
                 timeToShow={["H", "M", "S"]}
-                timeLabels={{ h: null, m: null, s: null }}
               />
             </Box>
             <Text
