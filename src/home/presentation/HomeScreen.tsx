@@ -1,6 +1,8 @@
 import React from "react";
+import { TouchableOpacity, Dimensions } from "react-native";
 import {
   Box,
+  Flex,
   Heading,
   HStack,
   VStack,
@@ -17,7 +19,13 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PromoCard from "../../core/presentation/PromoCard";
 import ProductCard from "../../core/presentation/ProductCard";
 
-const HomeScreen: React.FC = ({ route }) => {
+var width = Dimensions.get("window");
+
+var layout = {
+  width: width,
+};
+
+const HomeScreen: React.FC = ({ navigation }) => {
   return (
     <ScrollView>
       <Box flex={1} safeArea bg="white">
@@ -85,17 +93,15 @@ const HomeScreen: React.FC = ({ route }) => {
               Lihat semua
             </Text>
           </HStack>
-          <Box width="50%">
-            <VStack>
-              <HStack justifyContent="space-between">
+          <Box width={width}>
+            <TouchableOpacity onPress={() => navigation.navigate("Deskripsi")}>
+              <Flex direction="row">
                 <ProductCard />
                 <ProductCard />
-              </HStack>
-              <HStack justifyContent="space-between">
                 <ProductCard />
                 <ProductCard />
-              </HStack>
-            </VStack>
+              </Flex>
+            </TouchableOpacity>
           </Box>
         </Box>
       </Box>
