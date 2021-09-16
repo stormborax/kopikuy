@@ -1,15 +1,14 @@
 import React from "react";
-import { TouchableOpacity, Dimensions } from "react-native";
+import { TouchableOpacity, Dimensions, ScrollView } from "react-native";
 import {
   Box,
-  Flex,
   Heading,
   HStack,
   VStack,
   Divider,
   Text,
   Button,
-  ScrollView,
+  SimpleGrid,
 } from "native-base";
 
 import Carousel from "react-native-snap-carousel";
@@ -62,10 +61,12 @@ const HomeScreen: React.FC = ({ navigation }) => {
           <Heading size="md" px={4} py={4} color="black">
             Promo spesial untukmu
           </Heading>
-          <HStack space={3}>
-            <PromoCard />
-            <PromoCard />
-          </HStack>
+          <ScrollView horizontal={true}>
+            <HStack space={3}>
+              <PromoCard />
+              <PromoCard />
+            </HStack>
+          </ScrollView>
         </Box>
         <Divider />
         <Box px={4} py={8}>
@@ -80,6 +81,7 @@ const HomeScreen: React.FC = ({ navigation }) => {
                 size={10}
                 until={3600000}
                 timeToShow={["H", "M", "S"]}
+                timeLabels={{ h: "", m: "", s: "" }}
               />
             </Box>
             <Text
@@ -93,15 +95,13 @@ const HomeScreen: React.FC = ({ navigation }) => {
               Lihat semua
             </Text>
           </HStack>
-          <Box width={width}>
-            <TouchableOpacity onPress={() => navigation.navigate("Deskripsi")}>
-              <Flex direction="row">
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-              </Flex>
-            </TouchableOpacity>
+          <Box width="50%">
+            <SimpleGrid columns={2} spacingY={1} spacingX={1}>
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+            </SimpleGrid>
           </Box>
         </Box>
       </Box>

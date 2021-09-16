@@ -6,11 +6,12 @@ const ProductCard = () => {
     <Box bg="white" shadow={2} rounded="lg" maxWidth="100%" px={1}>
       <Image
         source={{
-          uri: "https://sample-example.nativebase.io/static/media/dawki-river.ebbf5434.png",
+          uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1x6reDpMwrrqKM7qwFqouHJVSqfd1Xn0tcg&usqp=CAU",
         }}
         alt="image base"
         resizeMode="cover"
         height={200}
+        width={200}
         roundedTop="md"
       />
       <Box
@@ -27,8 +28,8 @@ const ProductCard = () => {
         Promo
       </Box>
       <Stack space={4} p={[4, 4, 8]}>
-        <Heading size={"md"} noOfLines={2}>
-          Light Kopi Kenangan Mantan
+        <Heading size={"sm"} noOfLines={2}>
+          Kopi Kenangan Mantan
         </Heading>
         <Text lineHeight={[5, 5, 7]} color="gray.700">
           Rp. 18.000,00
