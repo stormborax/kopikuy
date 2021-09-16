@@ -4,7 +4,7 @@ import { Box, HStack, VStack, Text, Heading, Avatar } from "native-base";
 
 const PromoCard = () => {
   return (
-    <Box my={3} bg="white" shadow={2} rounded="lg" maxWidth="100%" px={1}>
+    <Box my={3} bg="white" shadow={2} rounded="lg" width="50%" px={1}>
       <TouchableOpacity onPress={() => console.log("promo card pressed")}>
         <Heading px={4} py={2} size="sm" fontSize={12} bold color="yellow.500">
           ShopeePay
