@@ -1,17 +1,8 @@
 import React from "react";
 import { TouchableOpacity, Dimensions, ScrollView } from "react-native";
-import {
-  Box,
-  Heading,
-  HStack,
-  VStack,
-  Divider,
-  Text,
-  Button,
-  SimpleGrid,
-} from "native-base";
+import { Box, Heading, HStack, Divider, Text, SimpleGrid } from "native-base";
 
-import Carousel from "react-native-snap-carousel";
+import { EpicChip } from "epic-chip-react-native";
 import CountDown from "react-native-countdown-component";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -29,35 +20,44 @@ const HomeScreen: React.FC = ({ navigation }) => {
     <ScrollView>
       <Box flex={1} safeArea bg="white">
         <Box>
-          <HStack>
-            <Button
-              mx={3}
-              my={3}
-              size="sm"
-              variant="outline"
-              colorScheme="black"
-              startIcon={
-                <MaterialCommunityIcons name="bread-slice-outline" size={20} />
-              }
-            >
-              Cerita Roti
-            </Button>
-            <Button
-              mx={3}
-              my={3}
-              size="sm"
-              variant="outline"
-              colorScheme="black"
-              startIcon={
-                <MaterialCommunityIcons
-                  name="food-drumstick-outline"
-                  size={20}
-                />
-              }
-            >
-              Chigo
-            </Button>
-          </HStack>
+          <Box px={4}>
+            <HStack space="xs">
+              <EpicChip
+                labelOptions={{
+                  label: "Cerita Roti",
+                  Icon: <MaterialCommunityIcons name="bread-slice" size={15} />,
+                }}
+                options={{
+                  labelStyles: { paddingLeft: 10 },
+                  backgroundColor: { focusColor: "#FF2B18" },
+                  labelColor: {
+                    focusColor: "#FFFFFF",
+                    inActiveColor: "#000000",
+                  },
+                }}
+                mode="Solid"
+                checkIcon={false}
+              />
+              <EpicChip
+                labelOptions={{
+                  label: "Chigo",
+                  Icon: (
+                    <MaterialCommunityIcons name="food-drumstick" size={15} />
+                  ),
+                }}
+                options={{
+                  labelStyles: { paddingLeft: 10 },
+                  backgroundColor: { focusColor: "#FF2B18" },
+                  labelColor: {
+                    focusColor: "#FFFFFF",
+                    inActiveColor: "#000000",
+                  },
+                }}
+                mode="Solid"
+                checkIcon={false}
+              />
+            </HStack>
+          </Box>
           <Heading size="md" px={4} py={4} color="black">
             Promo spesial untukmu
           </Heading>
@@ -96,12 +96,14 @@ const HomeScreen: React.FC = ({ navigation }) => {
             </Text>
           </HStack>
           <Box width="50%">
-            <SimpleGrid columns={2} spacingY={1} spacingX={1}>
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-            </SimpleGrid>
+            <TouchableOpacity onPress={() => navigation.navigate("Deskripsi")}>
+              <SimpleGrid columns={2} spacingY={1} spacingX={1}>
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+              </SimpleGrid>
+            </TouchableOpacity>
           </Box>
         </Box>
       </Box>
