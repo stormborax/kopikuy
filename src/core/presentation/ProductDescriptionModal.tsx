@@ -1,14 +1,23 @@
-import React from 'react';
-import {Image, Text, Button, Heading, Box, HStack, VStack, Modal} from 'native-base';
+import React from "react";
+import {
+  Image,
+  Text,
+  Button,
+  Heading,
+  Box,
+  HStack,
+  VStack,
+  Modal,
+} from "native-base";
 
-import CountDown from 'react-native-countdown-component';
-import NumericInput from 'react-native-numeric-input'
-import { EpicChip } from 'epic-chip-react-native';
+import CountDown from "react-native-countdown-component";
+import NumericInput from "react-native-numeric-input";
+import { EpicChip } from "epic-chip-react-native";
 
 const ProductDescriptionModal = () => {
-    return (
-        <Box>
-           <Image
+  return (
+    <Box>
+      <Image
         source={{
           uri: "https://sample-example.nativebase.io/static/media/dawki-river.ebbf5434.png",
         }}
@@ -30,6 +39,8 @@ const ProductDescriptionModal = () => {
       >
         Flash Sale
       </Box>
-        </Box>
-    )
-}
+    </Box>
+  );
+};
+
+export default ProductDescriptionModal;

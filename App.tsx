@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import HomeScreen from "./src/home/presentation/HomeScreen";
+import ProductDescriptionModal from "./src/core/presentation/ProductDescriptionModal";
 import CatalogueSreen from "./src/catalogue/presentation/CatalogueScreen";
 import ProfileScreen from "./src/profile/presentation/ProfileScreen";
 import EditProfileScreen from "./src/profile/presentation/EditProfileScreen";
@@ -53,6 +54,10 @@ function KopiKuyTabs({ navigation }) {
   return (
     <MainBottomTab.Navigator screenOptions={{ tabBarHideOnKeyboard: true }}>
       <MainBottomTab.Screen name="Beranda" component={HomeScreen} />
+      <MainBottomTab.Screen
+        name="Deskripsi"
+        component={ProductDescriptionModal}
+      />
       <MainBottomTab.Screen name="Menu" component={CatalogueSreen} />
       <MainBottomTab.Screen
         name="Promo"
