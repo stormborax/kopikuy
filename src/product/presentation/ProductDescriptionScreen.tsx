@@ -15,15 +15,16 @@ import {
   TextArea,
 } from "native-base";
 
+import NumericInput from "react-native-numeric-input";
 import { EpicChip } from "epic-chip-react-native";
 import { Entypo } from "@expo/vector-icons";
 
-import ToppingCard from "./ToppingCard";
+import ToppingCard from "../../core/presentation/ToppingCard";
 
-const ProductDescriptionModal = () => {
+const ProductDescriptionScreen = () => {
   return (
     <ScrollView>
-      <Box bg="white" safeArea>
+      <Box bg="white">
         <Image
           source={{
             uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1x6reDpMwrrqKM7qwFqouHJVSqfd1Xn0tcg&usqp=CAU",
@@ -69,7 +70,7 @@ const ProductDescriptionModal = () => {
         <Divider />
         <Box>
           <HStack>
-            <Heading px={2} color="black.300" size="md">
+            <Heading px={2} size="md">
               Kopi Kenangan Mantan
             </Heading>
             <Heading px={5} py={1} color="red.600" size="sm">
@@ -283,16 +284,25 @@ const ProductDescriptionModal = () => {
         </HStack>
         <TextArea p={2} bg="#e7e5e4" placeholder="Ga perlu baper" />
         <Divider />
-        <Button
-          bg="red.600"
-          m={2}
-          _text={{ fontWeight: "bold", color: "white" }}
-        >
-          Simpan Konfigurasi
-        </Button>
+        <Box>
+          <HStack>
+            <Box p={2} width="40%">
+              <NumericInput iconSize={25} />
+            </Box>
+            <Box width="60%">
+              <Button
+                bg="red.600"
+                m={2}
+                _text={{ fontWeight: "bold", color: "white" }}
+              >
+                Keranjang Rp. 18.000
+              </Button>
+            </Box>
+          </HStack>
+        </Box>
       </Box>
     </ScrollView>
   );
 };
 
-export default ProductDescriptionModal;
+export default ProductDescriptionScreen;
