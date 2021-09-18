@@ -24,7 +24,7 @@ import ToppingCard from "../../core/presentation/ToppingCard";
 const ProductDescriptionScreen = () => {
   return (
     <ScrollView>
-      <Box bg="white" safeArea>
+      <Box bg="white">
         <Image
           source={{
             uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1x6reDpMwrrqKM7qwFqouHJVSqfd1Xn0tcg&usqp=CAU",

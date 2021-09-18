@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import HomeScreen from "./src/home/presentation/HomeScreen";
 import ProductDescriptionScreen from "./src/product/presentation/ProductDescriptionScreen";
+import ProductBundleDescriptionScreen from "./src/product/presentation/ProductBundleDescriptionScreen";
 import CatalogueSreen from "./src/catalogue/presentation/CatalogueScreen";
 import ProfileScreen from "./src/profile/presentation/ProfileScreen";
 import EditProfileScreen from "./src/profile/presentation/EditProfileScreen";
@@ -108,6 +109,10 @@ export default function App() {
           <MainStack.Screen
             name="Deskripsi"
             component={ProductDescriptionScreen}
+          />
+          <MainStack.Screen
+            name="Paket"
+            component={ProductBundleDescriptionScreen}
           />
           <MainStack.Screen name="Edit Profile" component={EditProfileScreen} />
           <MainStack.Screen name="Ganti PIN" component={EditPinScreen} />
