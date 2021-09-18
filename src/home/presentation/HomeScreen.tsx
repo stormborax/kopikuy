@@ -1,64 +1,132 @@
 import React from "react";
-import { TouchableOpacity, Dimensions, ScrollView } from "react-native";
+import { TouchableOpacity, ScrollView } from "react-native";
 import {
   Box,
   Heading,
   HStack,
-  VStack,
   Divider,
   Text,
-  Button,
   SimpleGrid,
+  Image,
 } from "native-base";
 
-import Carousel from "react-native-snap-carousel";
+import { EpicChip } from "epic-chip-react-native";
 import CountDown from "react-native-countdown-component";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Swiper from "react-native-swiper/src";
 
 import PromoCard from "../../core/presentation/PromoCard";
 import ProductCard from "../../core/presentation/ProductCard";
-
-var width = Dimensions.get("window");
-
-var layout = {
-  width: width,
-};
+import ReorderCard from "../../core/presentation/ReorderCard";
 
 const HomeScreen: React.FC = ({ navigation }) => {
   return (
     <ScrollView>
-      <Box flex={1} safeArea bg="white">
+      <Box flex={1} bg="white">
         <Box>
+          <Swiper
+            height={200}
+            paginationStyle={{ position: "absolute", bottom: 10, left: -300 }}
+            dotColor="gray"
+            activeDotColor="white"
+          >
+            <Box justifyContent="center" alignItems="center">
+              <Image
+                source={{
+                  uri: "https://www.tagar.id/Asset/uploads2019/1589366937731-kopi-kenangan.jpg",
+                }}
+                alt="image base"
+                resizeMode="cover"
+                height="100%"
+                width="100%"
+                roundedTop="md"
+              />
+            </Box>
+            <Box justifyContent="center" alignItems="center">
+              <Image
+                source={{
+                  uri: "https://awsimages.detik.net.id/community/media/visual/2019/10/01/d65943e9-2514-4f61-9c4c-21bd77dd42e0_169.jpeg?w=700&q=90",
+                }}
+                alt="image base"
+                resizeMode="cover"
+                height="100%"
+                width="100%"
+                roundedTop="md"
+              />
+            </Box>
+            <Box justifyContent="center" alignItems="center">
+              <Image
+                source={{
+                  uri: "https://cdns.klimg.com/merdeka.com/i/w/news/2019/12/24/1135814/750x375/kopi-kenangan-raih-suntikan-modal-dari-jay-z-hingga-serena-williams.jpg",
+                }}
+                alt="image base"
+                resizeMode="cover"
+                height="100%"
+                width="100%"
+                roundedTop="md"
+              />
+            </Box>
+          </Swiper>
+        </Box>
+        <Divider my={3} />
+        <Box>
+          <Box px={4}>
+            <HStack space="xs">
+              <EpicChip
+                labelOptions={{
+                  label: "Cerita Roti",
+                  Icon: <MaterialCommunityIcons name="bread-slice" size={15} />,
+                }}
+                options={{
+                  labelStyles: { paddingLeft: 10 },
+                  backgroundColor: { focusColor: "#FF2B18" },
+                  labelColor: {
+                    focusColor: "#FFFFFF",
+                    inActiveColor: "#000000",
+                  },
+                }}
+                mode="Solid"
+                checkIcon={false}
+              />
+              <EpicChip
+                labelOptions={{
+                  label: "Chigo",
+                  Icon: (
+                    <MaterialCommunityIcons name="food-drumstick" size={15} />
+                  ),
+                }}
+                options={{
+                  labelStyles: { paddingLeft: 10 },
+                  backgroundColor: { focusColor: "#FF2B18" },
+                  labelColor: {
+                    focusColor: "#FFFFFF",
+                    inActiveColor: "#000000",
+                  },
+                }}
+                mode="Solid"
+                checkIcon={false}
+              />
+            </HStack>
+          </Box>
+          <Divider my={3} />
           <HStack>
-            <Button
-              mx={3}
-              my={3}
-              size="sm"
-              variant="outline"
-              colorScheme="black"
-              startIcon={
-                <MaterialCommunityIcons name="bread-slice-outline" size={20} />
-              }
-            >
-              Cerita Roti
-            </Button>
-            <Button
-              mx={3}
-              my={3}
-              size="sm"
-              variant="outline"
-              colorScheme="black"
-              startIcon={
-                <MaterialCommunityIcons
-                  name="food-drumstick-outline"
-                  size={20}
-                />
-              }
-            >
-              Chigo
-            </Button>
+            <Heading size="md" paddingLeft={4} py={2} color="black">
+              Order Lagi
+            </Heading>
+            <MaterialCommunityIcons
+              name="star"
+              color="yellow"
+              size={20}
+              style={{ paddingTop: 12, paddingLeft: 3 }}
+            />
           </HStack>
-          <Heading size="md" px={4} py={4} color="black">
+          <ScrollView horizontal={true}>
+            <HStack space={3}>
+              <ReorderCard />
+              <ReorderCard />
+            </HStack>
+          </ScrollView>
+          <Heading size="md" px={4} py={2} color="black">
             Promo spesial untukmu
           </Heading>
           <ScrollView horizontal={true}>
@@ -96,12 +164,14 @@ const HomeScreen: React.FC = ({ navigation }) => {
             </Text>
           </HStack>
           <Box width="50%">
-            <SimpleGrid columns={2} spacingY={1} spacingX={1}>
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-            </SimpleGrid>
+            <TouchableOpacity onPress={() => navigation.navigate("Paket")}>
+              <SimpleGrid columns={2} spacingY={1} spacingX={1}>
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+              </SimpleGrid>
+            </TouchableOpacity>
           </Box>
         </Box>
       </Box>
