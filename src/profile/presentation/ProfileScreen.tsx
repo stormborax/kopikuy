@@ -75,8 +75,8 @@ const ProfileScreen: React.FC = ({ navigation }) => {
           </VStack>
         </HStack>
       </Box>
-      <HStack space={2} mx={2}>
-        <VStack>
+      <VStack>
+        <HStack space={3} mx={2}>
           <Box py={4}>
             <MaterialIcons
               name="format-list-bulleted"
@@ -84,48 +84,84 @@ const ProfileScreen: React.FC = ({ navigation }) => {
               color="#ca8a04"
             />
           </Box>
+          <Box flex={1}>
+            <Text py={4}>Semua Pesanan</Text>
+            <Divider />
+          </Box>
+        </HStack>
+        <HStack space={3} mx={2}>
           <Box py={4}>
             <MaterialIcons name="location-city" size={24} color="#ca8a04" />
           </Box>
+          <Box flex={1}>
+            <Text py={4} onPress={() => navigation.navigate("Alamat Saya")}>
+              Alamat Pengiriman
+            </Text>
+            <Divider />
+          </Box>
+        </HStack>
+        <HStack space={3} mx={2}>
           <Box py={4}>
             <MaterialIcons name="help-outline" size={24} color="#ca8a04" />
           </Box>
+          <Box flex={1}>
+            <Text py={4} onPress={() => navigation.navigate("Bantuan")}>
+              Bantuan
+            </Text>
+            <Divider />
+          </Box>
+        </HStack>
+        <HStack space={3} mx={2}>
           <Box py={4}>
             <MaterialIcons name="message" size={24} color="#ca8a04" />
           </Box>
+          <Box flex={1}>
+            <Text py={4} onPress={() => navigation.navigate("Curhat")}>
+              Curhat
+            </Text>
+            <Divider />
+          </Box>
+        </HStack>
+        <HStack space={3} mx={2}>
           <Box py={4}>
             <MaterialIcons name="language" size={24} color="#ca8a04" />
           </Box>
+          <Box flex={1}>
+            <Text py={4} onPress={() => navigation.navigate("Pilih Bahasa")}>
+              Pengaturan Bahasa
+            </Text>
+            <Divider />
+          </Box>
+        </HStack>
+        <HStack space={3} mx={2}>
           <Box py={4}>
             <MaterialIcons name="info-outline" size={24} color="#ca8a04" />
           </Box>
+          <Box flex={1}>
+            <Text
+              py={4}
+              onPress={() => navigation.navigate("Ketentuan Layanan")}
+            >
+              Ketentuan Layanan
+            </Text>
+            <Divider />
+          </Box>
+        </HStack>
+        <HStack space={3} mx={2}>
           <Box py={4}>
             <FontAwesome name="coffee" size={24} color="#ca8a04" />
           </Box>
-        </VStack>
-        <VStack divider={<Divider />} flex={1}>
-          <Text py={4}>Semua Pesanan</Text>
-          <Text py={4} onPress={() => navigation.navigate("Alamat Saya")}>
-            Alamat Pengiriman
-          </Text>
-          <Text py={4} onPress={() => navigation.navigate("Bantuan")}>
-            Bantuan
-          </Text>
-          <Text py={4} onPress={() => navigation.navigate("Curhat")}>
-            Curhat
-          </Text>
-          <Text py={4} onPress={() => navigation.navigate("Pilih Bahasa")}>
-            Pengaturan Bahasa
-          </Text>
-          <Text py={4} onPress={() => navigation.navigate("Ketentuan Layanan")}>
-            Ketentuan Layanan
-          </Text>
-          <Text py={4} onPress={() => navigation.navigate("Tentang Kopi Kuy")}>
-            Tentang Kopi Kuy
-          </Text>
-          <Divider width={1} />
-        </VStack>
-      </HStack>
+          <Box flex={1}>
+            <Text
+              py={4}
+              onPress={() => navigation.navigate("Tentang Kopi Kuy")}
+            >
+              Tentang Kopi Kuy
+            </Text>
+            <Divider />
+          </Box>
+        </HStack>
+      </VStack>
     </Box>
   );
 };
