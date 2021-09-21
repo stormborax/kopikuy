@@ -164,7 +164,7 @@ const HomeScreen: React.FC = ({ navigation }) => {
             </Text>
           </HStack>
           <Box width="50%">
-            <TouchableOpacity onPress={() => navigation.navigate("Paket")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Deskripsi")}>
               <SimpleGrid columns={2} spacingY={1} spacingX={1}>
                 <ProductCard />
                 <ProductCard />

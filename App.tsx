@@ -25,6 +25,7 @@ import {
   FontAwesome5,
   MaterialCommunityIcons,
   Ionicons,
+  Feather,
 } from "@expo/vector-icons";
 const MainStack = createNativeStackNavigator();
 const MainBottomTab = createBottomTabNavigator();
@@ -54,7 +55,16 @@ function PromotionTopTabs() {
 function KopiKuyTabs({ navigation }) {
   return (
     <MainBottomTab.Navigator screenOptions={{ tabBarHideOnKeyboard: true }}>
-      <MainBottomTab.Screen name="Beranda" component={HomeScreen} />
+      <MainBottomTab.Screen
+        name="Beranda"
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="home" size={size} color={color} />
+          ),
+        }}
+      />
       <MainBottomTab.Screen name="Menu" component={CatalogueSreen} />
       <MainBottomTab.Screen
         name="Promo"

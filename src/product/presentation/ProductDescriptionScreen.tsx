@@ -8,7 +8,6 @@ import {
   Box,
   HStack,
   VStack,
-  Tooltip,
   Divider,
   ScrollView,
   SimpleGrid,
@@ -20,6 +19,10 @@ import { EpicChip } from "epic-chip-react-native";
 import { Entypo } from "@expo/vector-icons";
 
 import ToppingCard from "../../core/presentation/ToppingCard";
+import MerchandiseColorSelect from "../../core/presentation/MerchandiseColorSelect";
+import ToppingTooltip from "../../core/presentation/ToppingTooltip";
+import FavoriteTag from "../../core/presentation/FavoriteTag";
+import FlashSaleCountdown from "../../core/presentation/FlashSaleCountdown";
 
 const ProductDescriptionScreen = () => {
   return (
@@ -34,47 +37,22 @@ const ProductDescriptionScreen = () => {
           height={250}
           roundedTop="md"
         />
-        <Box
-          bg="red.700"
-          px={2}
-          py={2}
-          style={{ position: "absolute", top: 10 }}
-          _text={{
-            fontSize: "md",
-            fontWeight: "bold",
-            color: "white",
-          }}
-        >
-          Flash Sale
-        </Box>
-        <HStack mx={2} space="2xl">
-          <Tooltip label="Add Boba" openDelay={200}>
-            <Button size="xs" bottom={3} _text={{ fontWeight: "bold" }}>
-              2 Toppings
-            </Button>
-          </Tooltip>
-          <Box
-            bg="yellow.500"
-            rounded="xl"
-            p={2}
-            bottom={3}
-            _text={{
-              fontSize: "xs",
-              fontWeight: "bold",
-              color: "white",
-            }}
-          >
-            Favorite
+        <HStack m={3} space="2xl">
+          <Box style={{ position: "absolute", zIndex: 1 }}>
+            <ToppingTooltip />
+          </Box>
+          <Box style={{ position: "absolute", zIndex: 1, left: 100 }}>
+            <FavoriteTag />
           </Box>
         </HStack>
         <Divider />
-        <Box>
+        <Box my={3}>
           <HStack>
             <Heading px={2} size="md">
               Kopi Kenangan Mantan
             </Heading>
-            <Heading px={5} py={1} color="red.600" size="sm">
-              Rp. 18.000,00
+            <Heading position="absolute" right={5} color="red.600" size="md">
+              Rp. 18.000
             </Heading>
           </HStack>
           <Text px={2} py={2}>
@@ -82,6 +60,9 @@ const ProductDescriptionScreen = () => {
           </Text>
         </Box>
         <Divider />
+        <FlashSaleCountdown />
+        <Divider />
+        <MerchandiseColorSelect />
         <Box py={3}>
           <VStack space="sm">
             <HStack space="sm">
