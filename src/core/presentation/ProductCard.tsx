@@ -1,5 +1,9 @@
 import React from "react";
-import { Box, Image, Text, Heading, Stack } from "native-base";
+import { Box, Image, Text, Heading, Stack, HStack } from "native-base";
+
+import RedPromoTag from "./RedPromoTag";
+import NormalPrice from "./NormalPrice";
+import FlashSaleProgressBar from "./FlashSaleProgressBar";
 
 const ProductCard = () => {
   return (
@@ -14,26 +18,18 @@ const ProductCard = () => {
         width={200}
         roundedTop="md"
       />
-      <Box
-        bg="red.700"
-        px={2}
-        py={2}
-        style={{ position: "absolute", top: 0 }}
-        _text={{
-          fontSize: "md",
-          fontWeight: "bold",
-          color: "white",
-        }}
-      >
-        Promo
-      </Box>
+      <RedPromoTag />
       <Stack space={4} p={[4, 4, 8]}>
         <Heading size={"sm"} noOfLines={2}>
           Kopi Kenangan Mantan
         </Heading>
-        <Text lineHeight={[5, 5, 7]} color="gray.700">
-          Rp. 18.000,00
-        </Text>
+        <HStack space={2}>
+          <Text fontSize="sm" color="red.600" bold>
+            Rp. 18.000
+          </Text>
+          <NormalPrice />
+        </HStack>
+        <FlashSaleProgressBar />
       </Stack>
     </Box>
   );
