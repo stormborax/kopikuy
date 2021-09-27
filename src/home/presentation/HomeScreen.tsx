@@ -22,7 +22,7 @@ import ReorderCard from "../../core/presentation/ReorderCard";
 const HomeScreen: React.FC = ({ navigation }) => {
   return (
     <ScrollView>
-      <Box flex={1} bg="white">
+      <Box flex={1} safeArea bg="white">
         <Box>
           <Swiper
             height={200}
@@ -71,6 +71,7 @@ const HomeScreen: React.FC = ({ navigation }) => {
         <Divider my={3} />
         <Box>
           <Box px={4}>
+            {/*chip*/}
             <HStack space="xs">
               <EpicChip
                 labelOptions={{
@@ -109,36 +110,44 @@ const HomeScreen: React.FC = ({ navigation }) => {
             </HStack>
           </Box>
           <Divider my={3} />
-          <HStack>
-            <Heading size="md" paddingLeft={4} py={2} color="black">
-              Order Lagi
+          <Box>
+            {/*reorder*/}
+            <HStack>
+              <Heading size="md" paddingLeft={4} py={2} color="black">
+                Order Lagi
+              </Heading>
+              <MaterialCommunityIcons
+                name="star"
+                color="yellow"
+                size={20}
+                style={{ paddingTop: 12, paddingLeft: 3 }}
+              />
+            </HStack>
+            <ScrollView horizontal={true}>
+              <HStack space={3}>
+                <ReorderCard />
+                <ReorderCard />
+              </HStack>
+            </ScrollView>
+          </Box>
+          <Box>
+            {/*promo*/}
+            <Heading size="md" px={4} py={2} color="black">
+              Promo spesial untukmu
             </Heading>
-            <MaterialCommunityIcons
-              name="star"
-              color="yellow"
-              size={20}
-              style={{ paddingTop: 12, paddingLeft: 3 }}
-            />
-          </HStack>
-          <ScrollView horizontal={true}>
-            <HStack space={3}>
-              <ReorderCard />
-              <ReorderCard />
-            </HStack>
-          </ScrollView>
-          <Heading size="md" px={4} py={2} color="black">
-            Promo spesial untukmu
-          </Heading>
-          <ScrollView horizontal={true}>
-            <HStack space={3}>
-              <PromoCard />
-              <PromoCard />
-            </HStack>
-          </ScrollView>
+            <ScrollView horizontal={true}>
+              <HStack space={3}>
+                <PromoCard />
+                <PromoCard />
+              </HStack>
+            </ScrollView>
+          </Box>
         </Box>
         <Divider />
         <Box px={4} py={8}>
-          <Heading size="md">Flash Sale</Heading>
+          <Heading size="md" color="black">
+            Flash Sale
+          </Heading>
           <HStack space={2}>
             <Heading size="sm" py={4} color="grey">
               Berakhir dalam
