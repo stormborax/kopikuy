@@ -20,6 +20,8 @@ import MyVoucherScreen from "./src/promotion/presentation/MyVoucherScreen";
 import VoucherPackageScreen from "./src/promotion/presentation/VoucherPackageScreen";
 import MissionScreen from "./src/promotion/presentation/MissionScreen";
 import PurchaseHistoryScreen from "./src/promotion/presentation/PurchaseHistoryScreen";
+import OngoingOrderScreen from "./src/order/presentation/OngoingOrderScreen";
+import FinishedOrderScreen from "./src/order/presentation/FinishedOrderScreen";
 import { NativeBaseProvider, Pressable } from "native-base";
 import {
   FontAwesome5,
@@ -30,6 +32,16 @@ import {
 const MainStack = createNativeStackNavigator();
 const MainBottomTab = createBottomTabNavigator();
 const PromotionTopTab = createMaterialTopTabNavigator();
+const OrderTopTab = createMaterialTopTabNavigator();
+
+function OrderTopTabs() {
+  return (
+    <OrderTopTab.Navigator>
+      <OrderTopTab.Screen name="Sedang Jalan" component={OngoingOrderScreen}/>
+      <OrderTopTab.Screen name="Selesai" component={FinishedOrderScreen}/>
+    </OrderTopTab.Navigator>
+  );
+}
 
 function PromotionTopTabs() {
   return (
@@ -138,6 +150,10 @@ export default function App() {
           <MainStack.Screen
             name="Riwayat Pembelian"
             component={PurchaseHistoryScreen}
+          />
+          <MainStack.Screen
+            name="Riwayat Pesanan"
+            component={OrderTopTabs}
           />
         </MainStack.Navigator>
       </NavigationContainer>
