@@ -85,7 +85,9 @@ const ProfileScreen: React.FC = ({ navigation }) => {
             />
           </Box>
           <Box flex={1}>
-            <Text py={4}>Semua Pesanan</Text>
+            <Text py={4} onPress={() => navigation.navigate("Riwayat Pesanan")}>
+              Semua Pesanan
+            </Text>
             <Divider />
           </Box>
         </HStack>
